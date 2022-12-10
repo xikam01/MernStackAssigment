@@ -1,24 +1,16 @@
 
 const express = require('express')
 const router = express.Router()
-const { GetData } = require("../controllers/Usercontrol")
+const { GetData, PostData, UpdateData, DeleteData } = require("../controllers/Usercontrol")
 //======================================================================get==>
 router.get("/", GetData)
 
 //========================================================================saved==>
-router.post("/", (req, res, next) => {
-    res.status(200).json({
-        message: "saved users "
-    })
-})
+router.post("/", PostData)
 //========================================================================update==>
-router.put("/:id", (req, res, next) => {
-    res.status(200).json({ message: `Update  user ${req.params.id}` })
-})
+router.put("/:id", UpdateData)
 //========================================================================Delete==>
-router.delete("/:id", (req, res, next) => {
-    res.status(200).json({ message: `Delete user ${req.params.id}` })
-})
+router.delete("/:id", DeleteData)
 
 
 
