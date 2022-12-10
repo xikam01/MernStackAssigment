@@ -1,13 +1,9 @@
 const { application } = require('express')
 const express =require ('express')
 const router= express.Router()
-
+const { Getdata }= require("../controllers/Usercontrol")
 //======================================================================get==>
-router.get("/", (req, res, next) => {
-    res.status(200).json({
-        message: "Backend Development"
-    })
-})
+router.get("/", Getdata)
 
 //========================================================================saved==>
 router.post("/", (req, res, next) => {
