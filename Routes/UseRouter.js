@@ -1,9 +1,9 @@
-const { application } = require('express')
-const express =require ('express')
-const router= express.Router()
-const { Getdata }= require("../controllers/Usercontrol")
+
+const express = require('express')
+const router = express.Router()
+const { GetData } = require("../controllers/Usercontrol")
 //======================================================================get==>
-router.get("/", Getdata)
+router.get("/", GetData)
 
 //========================================================================saved==>
 router.post("/", (req, res, next) => {
@@ -22,4 +22,4 @@ router.delete("/:id", (req, res, next) => {
 
 
 
-module.exports=router
+module.exports = router
