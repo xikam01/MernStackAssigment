@@ -1,28 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const { GetingData,PostData,UPdataData,DeleteData } = require('../controllers/userContro')
 
 
+router.get("/", GetingData)
+router.post("/",PostData)
 
-router.get("/", (req, res,) => {
-    res.json({
-        Message: "Geting Uusers"
-    })
-})
-router.post("/", (req, res,) => {
-    res.json({
-        Message: "Create User"
-    })
-})
-router.put("/:id", (req, res,) => {
-    res.json({
-        Message: `update user ${req.params.id}`
-    })
-})
-router.delete("/:id", (req, res,) => {
-    res.json({
-        Message: `delete user ${req.params.id}`
-    })
-})
+router.put("/:id", UPdataData)
+router.delete("/:id",DeleteData)
 
 
 
