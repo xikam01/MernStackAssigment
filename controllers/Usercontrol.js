@@ -5,7 +5,8 @@ const GetData = (req, res, next) => {
 }
 
 const PostData = (req, res, next) => {
-    // console.log(req.body);
+    console.log(req.body);
+
     res.status(200).json({ message: "saved users " })
 }
 const UpdateData = (req, res, next) => {
