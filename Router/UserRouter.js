@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { GetingData,PostData,UPdataData,DeleteData } = require('../controllers/userContro')
+const { GetingData, PostData, UPdataData, DeleteData } = require('../controllers/userContro')
+
+router.route('/').get(GetingData).post(PostData)
+router.route('/:id').put(UPdataData).delete(PostData)
 
 
-router.get("/", GetingData)
-router.post("/",PostData)
-
-router.put("/:id", UPdataData)
-router.delete("/:id",DeleteData)
 
 
 
